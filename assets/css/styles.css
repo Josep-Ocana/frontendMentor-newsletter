@@ -2,11 +2,13 @@
 
 :root {
 	--font-roboto: 'Roboto', serif;
+	--h1: max(2.2rem, 3.9vw);
 	--tomato: hsl(4, 100%, 67%);
 	--tomato-opacity: hsl(4, 100%, 67%, 0.2);
 	--darkSlateGrey: hsl(234, 29%, 20%);
 	--charcoalGrey: hsl(235, 18%, 26%);
 	--grey: hsl(231, 7%, 60%);
+	--grey-opacity: hsl(231, 7%, 60%, 0.5);
 	--white: hsl(0, 0%, 100%);
 	--charcoalGrey-shadow: rgb(69, 73, 130);
 	--active: linear-gradient(
@@ -47,16 +49,15 @@ main {
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	gap: 3rem;
-	/* margin: 10rem auto 4rem auto; */
 	padding: 24px;
-	max-width: 53rem;
+	max-width: 56.7rem;
 	border-radius: 2rem;
 	background-color: var(--white);
 }
 
 /* Hero img __________________________________________*/
 .hero-div {
-	flex-basis: 50%;
+	flex-basis: 52%;
 	display: flex;
 	border-radius: 1rem;
 	overflow: hidden;
@@ -77,21 +78,20 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-self: center;
-	margin-left: 2rem;
+	margin-left: 2.4rem;
+	padding-right: 0.8rem;
 }
-
-/* CONTENT section ___________________________________*/
 
 .content > *:not(:last-child) {
-	margin-bottom: 2rem;
+	margin-bottom: 2.6rem;
 }
 .title {
-	font-size: 3.5rem;
+	font-size: var(--h1);
 	color: var(--darkSlateGrey);
 }
 
 .info {
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 /* List section ______________________________________*/
@@ -100,12 +100,12 @@ main {
 }
 
 .list-item {
-	padding-left: 2rem;
+	padding-left: 2.2rem;
 	background: url('/assets/images/icon-list.svg') no-repeat left top;
 }
 
 .list-item:not(:last-child) {
-	margin-bottom: 0.7rem;
+	margin-bottom: 0.6rem;
 }
 
 /* 	Form section	_________________________________ */
@@ -117,7 +117,7 @@ main {
 .form-row {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 0.2em;
+	margin-bottom: 0.4em;
 	font-size: 0.8rem;
 	font-weight: 700;
 }
@@ -126,28 +126,36 @@ main {
 	font-weight: 900;
 }
 
-#email {
-	margin-bottom: 1.3rem;
-	color: var(--darkSlateGrey);
-	border: 1px solid var(--grey);
-	padding: 1rem;
+#email,
+.btn {
+	padding: 1.2rem;
 	font-size: inherit;
 	border-radius: 0.5rem;
 	cursor: pointer;
+	font-weight: 500;
+}
+
+#email::placeholder {
+	color: var(--grey-opacity);
+}
+
+#email {
+	margin-bottom: 1.3rem;
+	border: 2px solid var(--grey-opacity);
 }
 
 .btn {
 	background: var(--darkSlateGrey);
 	color: var(--white);
-	font-weight: 700;
-	padding: 1.2rem;
-	border-radius: 0.5rem;
-	cursor: pointer;
+	border: none;
 }
 
-#btn:hover {
+.btn:hover {
+	background-color: var(--charcoalGrey);
+}
+
+.btn:active {
 	background: var(--active);
-	border: none;
 }
 
 .invalid-input {
@@ -165,7 +173,6 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	gap: 0;
-	margin-top: 12em;
 	padding: 3.5rem;
 	max-width: 30rem;
 }
@@ -178,7 +185,7 @@ main {
 	margin-bottom: 1.5rem;
 }
 
-.thanks {
+#success-container .title {
 	line-height: 3.5rem;
 	margin-bottom: 1.2rem;
 }
@@ -207,76 +214,75 @@ main {
 }
 
 .attribution a {
-	color: var(--white);
+	color: var(--active);
 }
 
 /* MEDIA QUERIES________________________________ */
-@media (width <= 830px) {
-	html {
-		font-size: 14px;
-	}
+
+/* Large Screens over 1500px */
+@media (width>1500px) {
 	.container {
-		width: 100%;
-		gap: 1rem;
-		padding: 1rem;
-	}
-	.title {
-		font-size: 3rem;
-		line-height: 120%;
-	}
-
-	.content {
-		margin-left: 1rem;
-	}
-
-	.content > *:not(:last-child) {
-		margin-bottom: 0.5rem;
-	}
-}
-
-/*   Media 575px */
-@media (width < 576px) {
-	.title {
-		font-size: 2rem;
+		max-width: 59rem;
 	}
 }
 
 /* Mobile screen */
-@media (width < 376px) {
+@media (width < 510px) {
 	html {
 		font-size: 16px;
 	}
+
+	main {
+		height: auto;
+	}
+
 	.container {
 		flex-direction: column;
-		justify-content: flex-start;
-		align-items: center;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 		border-radius: 0;
-	}
-
-	.hero-div {
-		border-radius: 0;
-		margin-bottom: 1rem;
-	}
-
-	.hero-img {
-		content: url(/assets/images/illustration-sign-up-mobile.svg);
 	}
 
 	.content {
-		margin-inline: 2rem;
+		margin: 0 auto;
+		padding: 0 1.2rem 2.8rem 1.2rem;
 	}
 
-	.content > * {
-		margin-bottom: 2rem;
+	.hero-div {
+		margin-bottom: 1rem;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 	}
 
 	.title {
-		font-size: 2.4rem;
+		font-size: 2.5rem;
+	}
+
+	/*  Success container */
+	#success-container {
+		height: 100vh;
+		justify-content: center;
+		gap: 0;
+		padding: 0 1.2rem 2.8rem 1.2rem;
+		max-width: 30rem;
+	}
+
+	.icon {
+		margin-top: auto;
+	}
+
+	#success-container .title {
+		line-height: 2.5rem;
+		margin-bottom: 1.2rem;
+	}
+
+	.btn {
+		margin-top: auto;
 	}
 
 	.attribution {
+		position: relative;
 		flex-direction: column;
+		padding: 1rem;
 	}
 }

@@ -14,19 +14,16 @@
 		<title>Frontend Mentor | Newsletter sign-up form with success message</title>
 		<meta
 			name="description"
-			content="Newsletter sign-up form with success message page by @Josep-Ocana for FrontendMentor.io"
+			content="Newsletter sign up form with success message page by @Josep-Ocana for FrontendMentor.io"
 		/>
-		<meta
-			name="keywords"
-			content="Frontend Mentor, Newsletter sign-up form with success message , @Josep-Ocana"
-		/>
+
 		<meta
 			property="og:title"
-			content="Newsletter sign-up form with success message - Frontend Mentor"
+			content="Newsletter sign up form with success message - Frontend Mentor"
 		/>
 		<meta
 			property="og:description"
-			content="Newsletter sign-up form with success message page Solution by @Josep-Ocana for FrontendMentor.io"
+			content="Newsletter sign up form with success message page Solution by @Josep-Ocana for FrontendMentor.io"
 		/>
 		<link rel="stylesheet" href="assets/css/styles.css" />
 	</head>
@@ -73,7 +70,12 @@
 								id="email"
 								placeholder=" email@company.com"
 							/>
-							<button type="submit" id="btn" class="btn">
+							<button
+								type="submit"
+								id="btn-sign-up"
+								class="btn"
+								aria-label="Sign up message"
+							>
 								Subscribe to monthly newsletter
 							</button>
 						</form>
@@ -86,7 +88,11 @@
 			<div id="success-container" class="container hidden">
 				<section class="icon">
 					<i>
-						<img src="assets/images/icon-success.svg" alt="" />
+						<img
+							class="icon"
+							src="assets/images/icon-success.svg"
+							alt="icon success"
+						/>
 					</i>
 				</section>
 				<section class="success">
@@ -100,7 +106,12 @@
 				</section>
 				<section class="button"></section>
 
-				<button type="submit" id="btn-success" class="btn">
+				<button
+					type="submit"
+					id="btn-success"
+					class="btn"
+					aria-label="Dismiss message"
+				>
 					Dismiss message
 				</button>
 			</div>
@@ -120,6 +131,6 @@
 			<div id="coded">Coded by <a href="#">Josep Ocaña Puigdevall </a>.</div>
 		</footer>
 
-		<script src="assets/js/app.js"></script>
+		<script src="assets/js/app.js" type="module"></script>
 	</body>
 </html>
