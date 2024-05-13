@@ -5,6 +5,7 @@ import {
 	showAlert,
 	sendForm,
 } from './functions.js';
+
 (function () {
 	// Change svg image when resize screen
 	window.addEventListener('resize', () => {
